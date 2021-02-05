@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
+        uses: google-github-actions/setup-gcloud@master
         with:
           project_id: uri-test
           service_account_key: ${{ secrets.gcp }}
@@ -36,10 +36,10 @@ jobs:
         run: gcloud info
 
       - name: Deploy workflow
-        uses: UriKatsirPrivate/deploy-workflow@master
+        uses: UriKatsirPrivate/deploy-workflow@v2
         with:
           project-id: uri-test
-          workflow-name: deploy-workflow-demo
+          workflow-name: girhub-actions-demo
           workflow-definition-file-name: deploy-workflow-demo.yaml
           service-account-name: workflows-sa@uri-test.iam.gserviceaccount.com
           workflow-region: us-central1 
