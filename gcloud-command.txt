@@ -1,0 +1,7 @@
+Documentation: https://cloud.google.com/sdk/gcloud/reference/workflows
+
+Deploy a workflow
+gcloud workflows deploy CreateMachineImageTest --source=CreateMachineImage.workflow.yaml --service-account=oauth2@uri-test.iam.gserviceaccount.com --project uri-test --location us-central1
+
+Execute a workflow
+gcloud workflows execute CreateMachineImage --data='{"project":"uri-test","zone":"us-east1-b"}' --project uri-test
