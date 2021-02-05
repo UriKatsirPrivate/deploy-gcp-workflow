@@ -33,7 +33,7 @@ jobs:
           export_default_credentials: true
 
       - name: active account selected
-        run: gcloud auth login
+        run: gcloud auth activate-service-account --key-file ${{ secrets.gcp }}
 
       - name: Use gcloud CLI
         run: gcloud info
