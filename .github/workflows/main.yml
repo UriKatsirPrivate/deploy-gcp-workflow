@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "BuildDeployCloudRun"
-  BuildDeployCloudRun:
+  DeployWorkflow:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -39,10 +39,10 @@ jobs:
         run: gcloud info
 
       - name: Deploy workflow
-        uses: UriKatsirPrivate/deploy-workflow@master
+        uses: UriKatsirPrivate/deploy-workflow@v2
         with:
           project-id: uri-test
-          workflow-name: deploy-workflow-demo
+          workflow-name: girhub-actions-demo
           workflow-definition-file-name: deploy-workflow-demo.yaml
           service-account-name: workflows-sa@uri-test.iam.gserviceaccount.com
           workflow-region: us-central1 
