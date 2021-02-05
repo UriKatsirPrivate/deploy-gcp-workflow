@@ -1,4 +1,4 @@
-# Sample input
+# Sample input to test that is working
 - getCurrentTime:
     call: http.get
     args:

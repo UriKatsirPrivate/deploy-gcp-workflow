@@ -35,7 +35,7 @@ jobs:
       # - name: active account selected
       #   run: gcloud auth activate-service-account --key-file ${{ secrets.gcp }}
 
-      - name: Use gcloud CLI
+      - name: Use gcloud CLI to deploy the workflow
         run: gcloud info
 
       - name: Deploy workflow
