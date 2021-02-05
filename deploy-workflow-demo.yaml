@@ -1,4 +1,4 @@
-# Sample input to test that is working
+# Sample input to test that is working afe=ter deleting the security folder
 - getCurrentTime:
     call: http.get
     args:
