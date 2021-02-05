@@ -39,7 +39,7 @@ jobs:
         run: gcloud info
 
       - name: Deploy workflow
-        uses: UriKatsirPrivate/deploy-workflow@v2
+        uses: UriKatsirPrivate/deploy-workflow@v4
         with:
           project-id: uri-test
           workflow-name: girhub-actions-demo
