@@ -5,14 +5,6 @@ inputs:
     description: 'This project will be used to deploy the workflow'
     required: true
     default: ''
-  # service-account-key:  # id of the service account key to use
-  #   description: 'id of the service account key to use'
-  #   required: true
-  #   default: ''
-  # export-default-credentials:  # export_default_credentials
-  #   description: 'export_default_credentials'
-  #   required: true
-  #   default: 'true'
   workflow-name:  # workflow-name
     description: 'workflow-name'
     required: true
@@ -40,6 +32,4 @@ runs:
       shell: bash
     # - id: random-number-generator
     #   run: echo "::set-output name=random-id::$(echo $RANDOM)"
-    #   shell: bash
-    # - run: ${{ github.action_path }}/goodbye.sh
     #   shell: bash
