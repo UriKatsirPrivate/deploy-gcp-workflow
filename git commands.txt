@@ -1,0 +1,3 @@
+git tag -a -m "Description of this release" master
+
+git push --follow-tags

@@ -38,7 +38,7 @@ jobs:
       - name: Deploy workflow
         uses: UriKatsirPrivate/deploy-workflow@master
         with:
-          project_id: uri-test
+          project-id: uri-test
           workflow-name: deploy-workflow-demo
           workflow-definition-file-name: deploy-workflow-demo.yaml
           service-account-name: workflows-sa@uri-test.iam.gserviceaccount.com
