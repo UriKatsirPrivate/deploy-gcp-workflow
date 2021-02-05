@@ -32,17 +32,17 @@ jobs:
           service_account_key: ${{ secrets.gcp }}
           export_default_credentials: true
 
-      - name: active account selected
-        run: gcloud auth activate-service-account --key-file ${{ secrets.gcp }}
+      # - name: active account selected
+      #   run: gcloud auth activate-service-account --key-file ${{ secrets.gcp }}
 
       - name: Use gcloud CLI
         run: gcloud info
 
       - name: Deploy workflow
-        uses: UriKatsirPrivate/deploy-workflow@v4
+        uses: UriKatsirPrivate/deploy-workflow@v5
         with:
           project-id: uri-test
-          workflow-name: girhub-actions-demo
+          workflow-name: github-actions-demo
           workflow-definition-file-name: deploy-workflow-demo.yaml
           service-account-name: workflows-sa@uri-test.iam.gserviceaccount.com
           workflow-region: us-central1 
