@@ -36,4 +36,4 @@ GitHub action to deploy a GCP workflow
         service-account-name: <See inputs section>
         workflow-region: <See inputs section>
 ```
-* see [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository) for instructions how to securely pass service account credentials to a Github action
+* see [this file](https://github.com/UriKatsirPrivate/deploy-workflow/blob/main/.github/workflows/main.yml) for a working sample.
