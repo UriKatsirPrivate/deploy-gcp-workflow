@@ -1,4 +1,4 @@
-# Sample input to test that is working afe=ter deleting the security folder
+# Sample input to test that is working after a good night sleep
 - getCurrentTime:
     call: http.get
     args:
