@@ -1,4 +1,4 @@
-# Sample input to test that is working after a good night sleep
+# Sample to test the GitHub action
 - getCurrentTime:
     call: http.get
     args:
