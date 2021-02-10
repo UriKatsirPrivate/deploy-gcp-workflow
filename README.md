@@ -24,8 +24,8 @@ GitHub action to deploy a GCP workflow
     service_account_key: ${{ secrets.gcp }}
     export_default_credentials: true
 
-- name: Use gcloud CLI to deploy the workflow
-    run: gcloud info
+# - name: Use gcloud CLI to deploy the workflow
+#     run: gcloud info
 
 - name: Deploy workflow
     ses: UriKatsirPrivate/deploy-workflow@v5
