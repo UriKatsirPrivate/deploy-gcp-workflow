@@ -21,15 +21,9 @@ inputs:
     description: 'workflow-region'
     required: true
     default: 'us-central1'    
-# outputs:
-#   random-number:
-#     description: "Random number"
-#     value: ${{ steps.random-number-generator.outputs.random-id }}
+
 runs:
   using: "composite"
   steps: 
     - run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --service-account=${{ inputs.service-account-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
       shell: bash
-    # - id: random-number-generator
-    #   run: echo "::set-output name=random-id::$(echo $RANDOM)"
-    #   shell: bash
