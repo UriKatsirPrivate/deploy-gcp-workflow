@@ -1,4 +1,4 @@
-# Sample workflow to test the GitHub action.
+# Sample workflow to test the GitHub actions.
 - getCurrentTime:
     call: http.get
     args:
