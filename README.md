@@ -28,7 +28,7 @@ GitHub action to deploy a GCP workflow
 #     run: gcloud info
 
 - name: Deploy workflow
-    ses: UriKatsirPrivate/deploy-workflow@v5
+    uses: UriKatsirPrivate/deploy-workflow@v5
     with:
         project-id: <See inputs section>
         workflow-name: <See inputs section>
