@@ -2,7 +2,7 @@ name: 'Deploy GCP Workflow'
 description: 'Deploy GCP workflow definition'
 author: 'Uri Katsir'
 branding:
-  icon: 'activity'  
+  icon: 'upload-cloud'  
   color: 'blue'
 inputs:
   project-id:  # id of the project to use
