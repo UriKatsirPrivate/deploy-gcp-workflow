@@ -1,6 +1,9 @@
 name: 'Deploy GCP Workflow'
 description: 'Deploy GCP workflow definition'
-icon: 'activity'
+author: 'Uri Katsir'
+branding:
+  icon: 'activity'  
+  color: 'blue'
 inputs:
   project-id:  # id of the project to use
     description: 'This project will be used to deploy the workflow'
