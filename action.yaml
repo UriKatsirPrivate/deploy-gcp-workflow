@@ -1,4 +1,4 @@
-name: 'Deploy Workflow'
+name: 'Deploy GCPO Workflow'
 description: 'Deploy GCP workflow definition'
 inputs:
   project-id:  # id of the project to use
