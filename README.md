@@ -17,7 +17,7 @@ GitHub action to deploy a GCP workflow
     for instructions how to securely pass service account credentials to a Github action
 
 ```yaml
-- name: Set up Cloud SDK
+- name: Set up Cloud SDK1
   uses: google-github-actions/setup-gcloud@master
   with:
     project_id: <Your project ID>
