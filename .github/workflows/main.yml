@@ -41,7 +41,7 @@ jobs:
       # - name: Use gcloud CLI to deploy the workflow
       #   run: gcloud info
 
-      - name: Deploy workflow
+      - name: Deploy GCP Workflow
         uses: UriKatsirPrivate/deploy-workflow@v6
         with:
           project-id: uri-test
