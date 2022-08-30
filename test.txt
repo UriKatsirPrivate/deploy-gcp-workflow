@@ -1,6 +1,0 @@
-gcloud iam workload-identity-pools describe "github-pool" \
-  --project="${PROJECT_ID}" \
-  --location="global" \
-  --format="value(name)"
-
-fggh
