@@ -53,5 +53,5 @@ jobs:
           project-id: landing-zone-demo-341118
           workflow-name: github-actions-demo
           workflow-definition-file-name: deploy-workflow-demo.yaml
-          # service-account-name: workflows-sa@landing-zone-demo-341118.iam.gserviceaccount.com
+          service-account-name: workflows-sa@landing-zone-demo-341118.iam.gserviceaccount.com
           workflow-region: us-central1
