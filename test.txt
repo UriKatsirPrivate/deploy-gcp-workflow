@@ -3,4 +3,3 @@ gcloud iam workload-identity-pools describe "github-pool" \
   --location="global" \
   --format="value(name)"
 
-  gcloud iam service-accounts add-iam-policy-binding "workflows-sa@landing-zone-demo-341118.iam.gserviceaccount.com"   --project="${PROJECT_ID}"   --role="roles/iam.workloadIdentityU
