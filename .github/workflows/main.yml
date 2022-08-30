@@ -37,15 +37,15 @@ jobs:
           workload_identity_provider: 'projects/854735162550/locations/global/workloadIdentityPools/github-pool/providers/my-provider'
           service_account: 'workflows-sa@landing-zone-demo-341118.iam.gserviceaccount.com'
 
-      # - name: Set up Cloud SDK
-      #   uses: google-github-actions/setup-gcloud@master
-      #   with:
-      #     project_id: uri-test
-      #     service_account_key: ${{ secrets.gcp }}
-      #     export_default_credentials: true
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: uri-test
+          # service_account_key: ${{ secrets.gcp }}
+          export_default_credentials: true
 
-      # - name: Use gcloud CLI to deploy the workflow
-      #   run: gcloud info
+      - name: Use gcloud CLI to deploy the workflow
+        run: gcloud info
 
       - name: Deploy GCP Workflow
         uses: UriKatsirPrivate/deploy-gcp-workflow@v11
