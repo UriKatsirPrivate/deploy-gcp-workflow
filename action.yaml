@@ -28,7 +28,12 @@ inputs:
 
 runs:
   using: "composite"
-  steps: 
+  steps:
+    - name: Authenticate to Google Cloud  
+      uses: google-github-actions/auth@v0  
+      with:  
+        workload_identity_provider: 'projects/854735162550/locations/global/workloadIdentityPools/github-pool/providers/my-provider'  
+        service_account: ${{ inputs.service-account-name }} 
     - run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --service-account=${{ inputs.service-account-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
       shell: bash
     # - run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
