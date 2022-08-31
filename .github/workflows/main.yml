@@ -30,14 +30,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - id: auth
-        name: 'Authenticate to Google Cloud'
-        uses: google-github-actions/auth@v0
-        with:
-          project_id: "landing-zone-demo-341118"
-          workload_identity_provider: 'projects/854735162550/locations/global/workloadIdentityPools/github-pool/providers/my-provider'
-          service_account: 'workflows-sa@landing-zone-demo-341118.iam.gserviceaccount.com'
-          create_credentials_file: true
+      # - id: auth
+      #   name: 'Authenticate to Google Cloud'
+      #   uses: google-github-actions/auth@v0
+      #   with:
+      #     project_id: "landing-zone-demo-341118"
+      #     workload_identity_provider: 'projects/854735162550/locations/global/workloadIdentityPools/github-pool/providers/my-provider'
+      #     service_account: 'workflows-sa@landing-zone-demo-341118.iam.gserviceaccount.com'
+      #     create_credentials_file: true
 
       # - name: Set up Cloud SDK
       #   uses: google-github-actions/setup-gcloud@v0

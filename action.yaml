@@ -33,7 +33,9 @@ runs:
       uses: google-github-actions/auth@v0  
       with:  
         workload_identity_provider: 'projects/854735162550/locations/global/workloadIdentityPools/github-pool/providers/my-provider'  
-        service_account: ${{ inputs.service-account-name }} 
+        service_account: ${{ inputs.service-account-name }}
+    - name: Set up gcloud SDK  
+      uses: google-github-actions/setup-gcloud@v0     
     - run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --service-account=${{ inputs.service-account-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
       shell: bash
     # - run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
