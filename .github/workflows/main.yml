@@ -28,7 +28,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
 
       # - id: auth
       #   name: 'Authenticate to Google Cloud'
@@ -50,7 +50,7 @@ jobs:
       #   run: gcloud info
 
       - name: Deploy GCP Workflow
-        uses: UriKatsirPrivate/deploy-gcp-workflow@v15
+        uses: UriKatsirPrivate/deploy-gcp-workflow@v16
         with:
           project-id: landing-zone-demo-341118
           workflow-name: github-actions-demo
