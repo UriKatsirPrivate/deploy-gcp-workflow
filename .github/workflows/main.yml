@@ -44,7 +44,7 @@ jobs:
         with:
           project_id: uri-test
           # service_account_key: ${{ secrets.gcp }}
-          # export_default_credentials: true
+          export_default_credentials: true
 
       - name: Use gcloud CLI to deploy the workflow
         run: gcloud info
