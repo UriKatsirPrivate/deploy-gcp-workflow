@@ -50,7 +50,7 @@ jobs:
       #   run: gcloud info
 
       - name: Deploy GCP Workflow
-        uses: UriKatsirPrivate/deploy-gcp-workflow@v16
+        uses: UriKatsirPrivate/deploy-gcp-workflow@v17
         with:
           project-id: landing-zone-demo-341118
           workflow-name: github-actions-demo
