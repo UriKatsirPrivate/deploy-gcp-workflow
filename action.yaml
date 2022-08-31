@@ -39,8 +39,8 @@ runs:
       uses: google-github-actions/setup-gcloud@v0     
     - name: Deploy Workflow  
       shell: bash
-      run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --service-account=${{ inputs.service-account-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
+      # run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --service-account=${{ inputs.service-account-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
       
-    # - run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
+      run: gcloud workflows deploy ${{ inputs.workflow-name }} --source=${{ inputs.workflow-definition-file-name }} --project ${{ inputs.project-id }} --location ${{ inputs.workflow-region }}
     #   shell: bash
     
