@@ -2,7 +2,10 @@
 GitHub action to deploy a GCP workflow
 
 ## Prerequisites
-[setup-gcloud GitHub action](https://github.com/google-github-actions/setup-gcloud)
+This action requires:
+- Google Cloud credentials that are authorized to deploy a Cloud Run service.
+  See the [Credentials](#credentials) below for more information.
+
 
 
 ## Inputs (all inputs are required)
@@ -43,4 +46,12 @@ jobs:
             service-account-name: <See inputs section>
             workflow-region: <See inputs section>
 ```
-* see [this file](https://github.com/UriKatsirPrivate/deploy-workflow/blob/main/.github/workflows/main.yml) for a working sample.
+* see [this file](https://github.com/UriKatsirPrivate/deploy-gcp-workflow/blob/main/.github/workflows/deploy-workflow.yml) for a working sample.
+
+## Credentials
+
+### Via google-github-actions/auth
+
+Use [google-github-actions/auth](https://github.com/google-github-actions/auth) to authenticate the action. This Action supports both the recommended [Workload Identity Federation][wif] based authentication and the traditional [Service Account Key JSON][sa] based auth.
+
+See [usage](https://github.com/google-github-actions/auth#usage) for more details.
