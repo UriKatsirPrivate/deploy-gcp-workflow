@@ -1,5 +1,5 @@
 # deploy-workflow
-GitHub action to deploy a GCP workflow
+GitHub action to deploy a GCP workflow.
 
 ## Prerequisites
 This action requires:
