@@ -29,6 +29,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+    # Setup gcloud CLI
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v0
+    
+    # Deploy Workflow
     - name: Deploy Workflow  
       shell: bash
       run: |-

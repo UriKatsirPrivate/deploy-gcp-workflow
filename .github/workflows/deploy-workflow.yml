@@ -38,12 +38,12 @@ jobs:
           service_account: 'workflows-sa@landing-zone-demo-341118.iam.gserviceaccount.com'
     
 
-      # Setup gcloud CLI
-      - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0
+      # # Setup gcloud CLI
+      # - name: Set up Cloud SDK
+      #   uses: google-github-actions/setup-gcloud@v0
 
       - name: Deploy GCP Workflow
-        uses: UriKatsirPrivate/deploy-gcp-workflow@v30
+        uses: UriKatsirPrivate/deploy-gcp-workflow@v40
         with:
           project-id: landing-zone-demo-341118
           workflow-name: github-actions-demo
