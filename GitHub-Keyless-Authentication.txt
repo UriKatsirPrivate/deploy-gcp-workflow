@@ -1,0 +1,40 @@
+# Blog: https://cloud.google.com/blog/products/identity-security/enabling-keyless-authentication-from-github-actions
+# auth setup: https://github.com/google-github-actions/auth#setup
+
+export PROJECT_ID="landing-zone-demo-341118"
+
+gcloud services enable iamcredentials.googleapis.com \
+  --project "${PROJECT_ID}"
+
+gcloud iam workload-identity-pools create "github-pool" \
+  --project="${PROJECT_ID}" \
+  --location="global" \
+  --display-name="github pool"
+
+  gcloud iam workload-identity-pools describe "github-pool" \
+  --project="${PROJECT_ID}" \
+  --location="global" \
+  --format="value(name)"
+
+export WORKLOAD_IDENTITY_POOL_ID="projects/854735162550/locations/global/workloadIdentityPools/github-pool"
+
+gcloud iam workload-identity-pools providers create-oidc "my-provider" \
+  --project="${PROJECT_ID}" \
+  --location="global" \
+  --workload-identity-pool="github-pool" \
+  --display-name="github provider" \
+  --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository" \
+  --issuer-uri="https://token.actions.githubusercontent.com"
+
+export REPO="UriKatsirPrivate/deploy-gcp-workflow"
+
+  gcloud iam service-accounts add-iam-policy-binding "workflows-sa@landing-zone-demo-341118.iam.gserviceaccount.com" \
+  --project="${PROJECT_ID}" \
+  --role="roles/iam.workloadIdentityUser" \
+  --member="principalSet://iam.googleapis.com/${WORKLOAD_IDENTITY_POOL_ID}/attribute.repository/${REPO}"
+
+  gcloud iam workload-identity-pools providers describe "my-provider" \
+  --project="${PROJECT_ID}" \
+  --location="global" \
+  --workload-identity-pool="github-pool" \
+  --format="value(name)"
