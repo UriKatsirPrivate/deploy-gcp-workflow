@@ -16,8 +16,6 @@ This action requires:
 5. workflow-region: The workflow will be deployed to this region] (defaults to us-central1)
 
 ## Usage
-* see [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository) 
-    for instructions how to securely pass service account credentials to a Github action
 
 ```yaml
 jobs:
