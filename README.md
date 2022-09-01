@@ -50,6 +50,6 @@ jobs:
 
 ### Via google-github-actions/auth
 
-Use [google-github-actions/auth](https://github.com/google-github-actions/auth) to authenticate the action. This Action supports both the recommended [Workload Identity Federation][wif] based authentication and the traditional [Service Account Key JSON][sa] based auth.
+Use [google-github-actions/auth](https://github.com/google-github-actions/auth) to authenticate the action. This Action supports the recommended [Workload Identity Federation] based authentication.
 
 See [usage](https://github.com/google-github-actions/auth#usage) for more details.
