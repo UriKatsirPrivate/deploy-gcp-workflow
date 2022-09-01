@@ -17,23 +17,30 @@ GitHub action to deploy a GCP workflow
     for instructions how to securely pass service account credentials to a Github action
 
 ```yaml
-- name: Set up Cloud SDK1
-  uses: google-github-actions/setup-gcloud@master
-  with:
-    project_id: <Your project ID>
-    service_account_key: ${{ secrets.gcp }}
-    export_default_credentials: true
+jobs:
+  job_id:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
 
-# - name: Use gcloud CLI to deploy the workflow
-#     run: gcloud info
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3
+    
+    # Authenticate to GCP
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+        service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
 
-- name: Deploy workflow
-    uses: UriKatsirPrivate/deploy-workflow@v5
-    with:
-        project-id: <See inputs section>
-        workflow-name: <See inputs section>
-        workflow-definition-file-name: <See inputs section>
-        service-account-name: <See inputs section>
-        workflow-region: <See inputs section>
+    - name: Deploy workflow
+        uses: UriKatsirPrivate/deploy-workflow@v0
+        with:
+            project-id: <See inputs section>
+            workflow-name: <See inputs section>
+            workflow-definition-file-name: <See inputs section>
+            service-account-name: <See inputs section>
+            workflow-region: <See inputs section>
 ```
 * see [this file](https://github.com/UriKatsirPrivate/deploy-workflow/blob/main/.github/workflows/main.yml) for a working sample.
